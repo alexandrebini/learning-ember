@@ -1,0 +1,19 @@
+<h1>My Photoblog</h1>
+
+<div class="span3">
+  <div class="well">
+    <ul class="nav nav-list">
+      <li class="nav-header">All contacts</li>
+      {{#each photo in controller}}
+        {{#view}}
+          <a {{action showPhoto photo}}>
+            {{photo.title}}
+          </a>
+        {{/view}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
+<div class="span9">
+  {{outlet}}
+</div>

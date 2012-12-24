@@ -1,0 +1,9 @@
+{{#with content}}
+  <h2>{{title}}</h2>
+  <img {{bindAttr src="url"}} />
+{{/with}}
+
+<div>
+  <a {{action showEdit content}}>Edit</a>
+  <a {{action destroyRecord target="controller"}}>Remove</a>
+</div>
