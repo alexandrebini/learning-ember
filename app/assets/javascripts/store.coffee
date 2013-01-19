@@ -1,3 +1,3 @@
-Photoblog.store = DS.Store.create
-  revision: 4
-  adapter: DS.RESTAdapter.create()
+App.Store = DS.Store.extend
+  revision: 11
+  adapter: DS.RESTAdapter.create({ bulkCommit: false })

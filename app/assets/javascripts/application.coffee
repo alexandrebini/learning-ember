@@ -3,7 +3,14 @@
 #= require handlebars
 #= require ember
 #= require ember-data
+#= require bootstrap
 #= require_self
-#= require photoblog
+#= require store
+#= require routes
+#= require_tree ./models
+#= require_tree ./controllers
+#= require_tree ./helpers
+#= require_tree ./templates
+#= require_tree ./views
 
-Photoblog = Ember.Application.create()
+window.App = Ember.Application.create()

@@ -1,0 +1,33 @@
+<h1>{{headerTitle}} {{title}}</h1>
+
+{{#if content.fullErrorMessages}}
+  <div class='alert alert-error'>The following errors were found:</div>
+  <ul>
+    {{#each error in content.fullErrorMessages}}
+      <li>{{ error }}</li>
+    {{/each}}
+  </ul>
+{{/if}}
+
+
+{{#view App.PhotosFormView content=content}}
+  <form>
+    <fieldset>
+      {{#view view.FieldView item="title" }}
+        <label {{bindAttr for="titleField.elementId"}}>Title</label>
+        {{view Ember.TextField valueBinding='title' name='title' viewName='titleField'}}
+      {{/view}}
+
+      {{#view view.FieldView item="url" }}
+        <label {{bindAttr for='urlField.elementId'}}>Url</label>
+        {{view Ember.TextField valueBinding='url' name='url' viewName='urlField'}}
+      {{/view}}
+
+      <a href='#' {{action save}} class='btn btn-success'>{{buttonTitle}}</a>
+    </fieldset>
+  </form>
+{{/view}}
+
+<div class='page-header'></div>
+
+<a href='#' {{action cancel target="controller"}} class='btn btn-inverse'>Cancel</a>
